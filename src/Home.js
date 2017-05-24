@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Home extends Component {
 
   handleEpisodeDisplay(indexNum) {
-    const newArr = this.props.movieArray.map((mov, index) => 
+    const movieDataArray = this.props.movieArray.map((mov, index) => 
       <div key={mov[0]}>
         <h3 className="movieTitle">{mov[3]}</h3>
         <p className="movieYear">{mov[4]}</p>
@@ -29,7 +29,7 @@ class Home extends Component {
       </div>
       )
     return (
-      newArr[indexNum]
+      movieDataArray[indexNum]
     )
   }
   
@@ -46,7 +46,7 @@ class Home extends Component {
       <div className="appBody">
 
       <div className="jumpToSeasonButtons">
-        <h4 className="jumpToSeasonTitle">JUMP TO SEASON</h4>
+        <h4 className="fadedViewTitles">JUMP TO SEASON</h4>
         <button className={this.handleHighlightSeason(0, 21)} onClick={this.props.handleJumpToSeason.bind(this, 0)}>KTMA</button>
         <button className={this.handleHighlightSeason(22, 34)} onClick={this.props.handleJumpToSeason.bind(this, 22)}>1</button>
         <button className={this.handleHighlightSeason(35, 47)} onClick={this.props.handleJumpToSeason.bind(this, 35)}>2</button>

@@ -5,6 +5,7 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
+  background-color: #f9f9f9;
 }
 body {
   margin: 0;
@@ -13,17 +14,20 @@ body {
   font-family: 'Krona One', sans-serif;
 }
 .App {
+  display: block;
   text-align: center;
   max-width: 500px;
+  min-width: 280px;
   min-height: 490px;
   border: 2px solid #333;
   margin-left:auto;
   margin-right:auto;
+  overflow-x:hidden;
+  background-color: white;
 }
 .App-header {
   background-color: #222;
   font-family: 'Russo One', sans-serif;
-  letter-spacing: 2px;
   color: #FFC900;
 }
 .App-header a {
@@ -77,9 +81,9 @@ body {
   right: 1%;
 }
 .movieLinks button {
-  font-size: 1em;
+  font-size: .9em;
   color: #444;
-  width: 48%;
+  min-width: 46%;
   height: 54px;
   line-height: 50px;
   border: none;
@@ -132,18 +136,17 @@ body {
   background-color: #6ea8f4; 
 }
 .headerEpGuide {
-  width: 70%;
+  width: 50%;
   text-align: left;
 }
 .headerEpGuide p {
   padding-left: 0.7em;
 }
-.headerAboutUs {
-  width: 30%;
-  text-align: left;
+.headerSearch {
+  width: 25%;
 }
-.headerAboutUs p {
-  padding-left: 0.7em;
+.headerAboutUs {
+  width: 25%;
 }
 .activeNavLink div {
   background: #3084F0;
@@ -154,7 +157,7 @@ body {
 .jumpToSeasonButtons {
   border-bottom: 5px solid #333;
 }
-.jumpToSeasonTitle {
+.fadedViewTitles {
   font-size: .7em;
   margin: 0 auto;
   letter-spacing: 3px;
@@ -188,7 +191,7 @@ body {
   outline: none;
   color: white;
   font-size: 1em;
-  padding: 12px 19px;
+  padding: 12px 12px;
   cursor: pointer;
 }
 button {
@@ -205,12 +208,19 @@ button:active {
 }
 
 /*ABOUT*/
+.aboutBody {
+  height: 450px;
+  padding-top: 5px;
+  position: relative;
+}
 .aboutText {
   font-size: 0.8em;
 }
 .aboutFooter {
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 300px;
+  height: 320px;
   background-image: 
     linear-gradient(to top, rgba(255,255,255,0.1), rgba(255,255,255,0.9)),
     url("../public/MST3Koverlay-min.png");
@@ -219,6 +229,37 @@ button:active {
   background-size: cover;
 }
 
-/*remove mozilla outlines on buttons and text*/
-:focus {outline:none;}
-::-moz-focus-inner {border:0;}
+/*SEARCH*/
+.searchBox {
+  height: 450px;
+  width: 100%;
+  padding-top: 5px;
+  overflow: auto;
+}
+.searchInput {
+  margin-top: 5px;
+  width: 50%;
+  height: 20px;
+  border: 1px solid #333;
+}
+.searchInput:focus {
+    background-color: #f2f3f3;
+}
+.searchResults{
+  margin: 8px;
+  padding-bottom: 1px;
+  font-size: .8em;
+  background: #eff0f0;
+}
+.searchLinks {
+  text-decoration: none;
+  color: #333;
+}
+.searchLinks:hover {
+  color: #6ea8f4;
+}
+
+/*mobile browser fixes*/
+:focus {outline: none;}
+::-moz-focus-inner {border: 0;}
+* {-moz-border-radius: none; border-radius: 0; -webkit-border-radius: 0;}

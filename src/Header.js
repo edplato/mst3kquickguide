@@ -14,6 +14,10 @@ class Header extends Component {
               <div className="headerBlock headerEpGuide"><p>Episode Guide</p></div>
             </NavLink>
 
+            <NavLink to="/search" activeClassName="activeNavLink">
+              <div className="headerBlock headerSearch"><p>Search</p></div>
+            </NavLink>
+
             <NavLink to="/about" activeClassName="activeNavLink">
               <div className="headerBlock headerAboutUs"><p>About</p></div>
             </NavLink>

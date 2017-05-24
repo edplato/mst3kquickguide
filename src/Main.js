@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import axios from 'axios';
 import Home from './Home.js';
 import About from './About.js';
+import Search from './Search.js';
 
 class Main extends Component {
 
@@ -13,7 +14,6 @@ class Main extends Component {
       episodeCounter: 0,
       movieArray: []
     }
-
     this.handleHigherInList = this.handleHigherInList.bind(this);
     this.handleLowerInList = this.handleLowerInList.bind(this);
     this.randomEpisode = this.randomEpisode.bind(this);
@@ -26,7 +26,6 @@ class Main extends Component {
       this.setState({ movieArray });
     });
   }
-
   handleLowerInList(e) {
     e.preventDefault();
     if(this.state.episodeCounter > 0){
@@ -43,10 +42,13 @@ class Main extends Component {
     e.preventDefault();
       this.setState({ episodeCounter: Math.floor(Math.random()*212) });
   }
-
   handleJumpToSeason = (num, e) => {
     e.preventDefault();
       this.setState({ episodeCounter: num });
+  }
+  handleSearchResultClick = (num, e) => {
+    e.preventDefault();
+    this.setState({ episodeCounter: num });
   }
 
   render() {
@@ -65,6 +67,14 @@ class Main extends Component {
             />
             )}/>
           <Route path="/about" component={About}/>
+
+          <Route path="/search" render={(props) => (
+            <Search {...props} 
+            movieArray={this.state.movieArray}
+            handleSearchResultClick={this.handleSearchResultClick}
+            />
+            )}/>
+
         </Switch>
       </div>
       </main>
