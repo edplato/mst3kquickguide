@@ -24,7 +24,7 @@ class Search extends Component {
 
    let filteredMovies = movieArraySearch.filter(
       (episode) => {
-        return episode.movieTitle.toLowerCase().includes(this.state.search.toLowerCase());
+        return episode.movieTitle.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1;
       }
     );
 
